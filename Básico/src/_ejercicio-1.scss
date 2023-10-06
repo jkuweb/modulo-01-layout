@@ -1,0 +1,34 @@
+$base-color: blue;
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-gap: 1rem;
+  place-items: center;
+}
+.container-1 {
+  display: grid;
+  grid-template-columns: repeat(9, 6rem);
+  grid-template-rows: 6rem;
+  grid-gap: 1rem;
+}
+.box {
+  display: grid;
+  place-items: center;
+  font-family: sans-serif;
+  border-radius: 5px;
+}
+.base-color {
+  background-color: $base-color;
+  color: #fff;
+}
+@for $i from 1 through 4 {
+  .darken-#{$i} {
+    background-color: darken($base-color, $i * 10%);
+    color: invert($base-color);
+  }
+  .lighten-#{$i} {
+    background-color: lighten($base-color, $i * 10%);
+    color: invert($base-color);
+  }
+}
