@@ -1,0 +1,135 @@
+@use "typography" as font;
+@use "base" as base;
+
+/*  MOBILE FIRST */
+
+/* HEADER */
+header {
+  background-color: base.$brand-color;
+  display: flex;
+  align-items: center;
+  @media screen and (min-width: base.$desktop-breakpoint) {
+    display: block;
+  }
+}
+.toolbar {
+  @media screen and (min-width: base.$desktop-breakpoint) {
+    background-color: base.$white-color;
+  }
+  &:not(:last-child) {
+    display: none;
+    @media screen and (min-width: base.$desktop-breakpoint) {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 0.5rem;
+    }
+  }
+}
+
+.page-title {
+  font-family: font.$secondary-font;
+  font-size: base.$primary-heading;
+  color: base.$text-color;
+  padding-left: 1rem;
+  letter-spacing: 0.2rem;
+  line-height: 1;
+  @media screen and (min-width: base.$desktop-breakpoint) {
+    line-height: inherit;
+  }
+}
+
+/* MAV */
+.menu-title {
+  display: none;
+  @media screen and (min-width: base.$desktop-breakpoint) {
+    display: block;
+    text-transform: uppercase;
+    padding: 1rem;
+    text-align: center;
+    background-color: base.$brand-color-dark;
+    position: sticky;
+    top: 0;
+  }
+}
+
+nav {
+  background-color: base.$brand-color-dark;
+  position: sticky;
+  top: 0;
+  @media screen and (min-width: base.$desktop-breakpoint) {
+    position: relative;
+  }
+}
+
+.menu-container {
+  height: 100%;
+  & ul {
+    height: inherit;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    @media screen and (min-width: base.$desktop-breakpoint) {
+      display: block;
+      height: auto;
+      position: sticky;
+      top: 5rem;
+    }
+  }
+  & ul li {
+    background-color: base.$brand-color-light;
+    flex-basis: 5rem;
+    padding: 0.5rem;
+    text-align: center;
+    @media screen and (min-width: base.$desktop-breakpoint) {
+      padding: 2rem;
+      border-bottom: 1px solid;
+      margin-bottom: .3rem;
+      transition: all .3s;
+      &:hover {
+        background-color: #1c210a;
+        color: base.$white-color;
+      }
+    }
+  }
+}
+
+/* MAIN */
+
+main {
+  padding: 1rem;
+  background-color: base.$gray-color;
+}
+
+.list {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-rows: repeat(9, 13rem);
+  grid-auto-rows: 13rem;
+}
+
+.item {
+  border: 1px solid base.$brand-color-dark;
+  box-shadow: 0 3px 10px rgb(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: base.$white-color;
+  padding: 1rem;
+  & img {
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+}
+
+/* FOOTER */
+footer {
+  background-color: base.$brand-color-light;
+  padding-left: 0.5rem;
+  display: flex;
+  align-items: center;
+}

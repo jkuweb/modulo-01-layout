@@ -1,0 +1,19 @@
+// colors 
+$brand-color: hsl(65, 100%, 45%);
+$brand-color-dark: hsl(64, 100%, 32%);
+$brand-color-light: hsl(64, 100%, 87%);
+
+$black-color: hsl(0, 0%, 0%);
+$white-color: hsl(0, 0%, 100%);
+$gray-color: hsl(0, 0%, 87%);
+
+$text-color: hsl(0, 0%, 13%);
+
+// font-sizes
+$primary-heading: clamp(2rem, -0.625rem + 10vw, 4rem); 
+
+
+// breakpoint
+
+//  768px
+$desktop-breakpoint: 48rem;

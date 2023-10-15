@@ -1,0 +1,35 @@
+@use "base" as base;
+
+.grid {
+    max-width: 158rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5rem 4rem 1fr 2.5rem;
+    grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "footer";
+  @media screen and (min-width: base.$desktop-breakpoint){
+    grid-template-columns: minmax(20rem, 20%) 1fr;
+    grid-template-rows: 10rem 1fr 5rem;
+    grid-template-areas: 
+        "header header"
+        "nav main"
+        "footer footer";
+  }
+}
+
+header {
+    grid-area: header;
+}
+.page-container {
+    grid-area: nav;
+}
+main {
+    grid-area: main;
+}
+footer {
+    grid-area: footer;
+}

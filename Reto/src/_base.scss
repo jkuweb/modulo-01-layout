@@ -1,0 +1,20 @@
+// colors
+$color-background: #141414;
+
+$color-white: #fff;
+$color-black: #000;
+
+// wrapper
+$wrapper: 1rem;
+
+// breakpoint
+
+$breakpoint-tabled: 1070px;
+//$breakpoint-tabled: 768px;
+$breakpoint-desktop: 1280px;
+
+// section spacing
+.top,
+section {
+  padding-bottom: 4rem;
+}

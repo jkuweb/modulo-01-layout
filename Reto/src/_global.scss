@@ -1,0 +1,10 @@
+@use 'base' as base;
+body {
+    background-color: base.$color-background;
+    color: base.$color-white;
+    padding: base.$wrapper;
+}
+
+img {
+    width: 100%;
+}
