@@ -1,2 +1,6 @@
-@use 'reset';
-@use 'base';
+@use "reset";
+@use 'function';
+@use "base" as b;
+
+
+$theme: 'C';

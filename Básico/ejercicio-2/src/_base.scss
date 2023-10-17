@@ -1,19 +1,46 @@
+@use "function" as f;
+@use "sass:map";
+
+/* Choose the $theme value  
+    options: 'A' , 'B'
+*/
+$theme: "B";
+
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
+$styles: f.select-theme($theme);
 .container {
-    &__box {
-        width: 5rem;
-        height: 5rem;
-        padding: .5rem;
-        background-color: pink;
+  @each $property, $value in $styles {
+    $property: $value;
+  }
+  color: map.get($styles, "color");
+  font-weight: map.get($styles, "font-weigh");
+  font-family: map.get($styles, "font-family");
+  border-radius: map.get($styles, "border-radius");
+  overflow: hidden;
+  &__box {
+    width: 5rem;
+    height: 5rem;
+    padding: 0.5rem;
+    border: 1px solid #000;
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        background-color: darken(
+          map.get($styles, "background-color"),
+          $i * 10%
+        );
+      }
     }
+  }
 }
 .shadow-box {
-    @extend .container__box
+  @extend .container__box;
+  border: 1px solid #000;
+  box-shadow: map.get($styles, "box-shadow");
 }

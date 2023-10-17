@@ -1,0 +1,34 @@
+
+
+@function select-theme($theme) {
+  @if ($theme == "A") {
+    $styles: (
+      "color": #fff,
+      "font-family": sans-serif,
+      "font-weight": 300,
+      "background-color": rgb(255, 51, 0),
+      "border-radius": 10px,
+      "box-shadow": rgba(255, 51, 0.4) 5px 5px,
+    );
+    @return $styles;
+  } @else if($theme == "B") {
+    $styles: (
+      "color": #000,
+      "font-family": serif,
+      "font-weight": bold,
+      "background-color": rgb(19, 100, 239),
+      "border-radius": 5px,
+      "box-shadow": rgba(19, 100, 239, 0.4) -5px 5px,
+    );
+    @return $styles;
+  } @else {
+    $styles: (
+      "color": #000,
+      "font-family": sans-serif,
+      "font-weight": 400,
+      "background-color": rgb(160, 159, 159),
+      "border-radius": 0,
+    );
+    @return $styles;
+  }
+}
